@@ -39,3 +39,9 @@ variable "asg_max_ec2_count" {
   type        = number
   description = "Maximal number of ec2s to create"
 }
+
+variable "domain_name" {
+  type        = string
+  default     = "example.com"
+  description = "Domain name for DNS resolving"
+}
