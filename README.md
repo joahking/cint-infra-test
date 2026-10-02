@@ -14,7 +14,8 @@ A:
 terraform output -raw load_balancer_dns_name
 ```
 
-What aspects need to be considered to make the code work in a CD pipeline (how does it successfully and safely get into production)?
+Q: What aspects need to be considered to make the code work in a CD pipeline (how does it successfully and safely get into production)?
+A: an example of a pipeline is added in `.github/workflows/terraform.yml`.
 
 ## Route 53 and Application Load Balancer
 
@@ -44,4 +45,16 @@ Therefore Terraform should be initialized with the backend configuration for the
 ```
 terraform init \
   -backend-config=environments/prod/backend.hcl
+```
+
+## Required GitHub configuration
+
+The workflow expects these GitHub Environment variables:
+
+```
+dev:
+  AWS_TERRAFORM_ROLE_ARN
+
+production:
+  AWS_TERRAFORM_ROLE_ARN
 ```
