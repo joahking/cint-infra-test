@@ -45,3 +45,27 @@ variable "domain_name" {
   default     = "example.com"
   description = "Domain name for DNS resolving"
 }
+
+variable "postgres_version" {
+  description = "PostgreSQL engine version"
+  type        = string
+  default     = "16.4"
+}
+
+variable "db_instance_class" {
+  description = "RDS instance class"
+  type        = string
+  default     = "db.t3.micro"
+}
+
+variable "db_name" {
+  description = "Initial database name"
+  type        = string
+  default     = "appdb"
+}
+
+variable "db_username" {
+  description = "Master username for PostgreSQL"
+  type        = string
+  default     = "app"
+}
